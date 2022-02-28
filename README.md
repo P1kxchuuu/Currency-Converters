@@ -9,5 +9,7 @@ A program that converts a currency selected by the user to US dollars.
 
 First, the user is asked for an amount of money in the selected currency, and then is asked for an amount of money in the selected currency. 
 The output is given accordingly. 
+
 ––––––––––
-I may continue to add mroe currencies to both programs in the future. 
+
+I may continue to add more currencies to both programs in the future. 
