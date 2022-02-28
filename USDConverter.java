@@ -1,4 +1,4 @@
-//Importing to allow the scanners
+//Importing to allow use of the scanners
 import java.util.Scanner;
 
 public class USDConverter {
