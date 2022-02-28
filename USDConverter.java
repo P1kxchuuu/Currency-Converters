@@ -1,11 +1,11 @@
-//Importing to handle the scanners
+//Importing to allow the scanners
 import java.util.Scanner;
 
-public class Converter {
+public class USDConverter {
     public static void main(String[] args) {
         //First scanner to handle the currency inputted by the user
         Scanner currency = new Scanner(System.in);
-        //Second scanner to handle the user's response if they want to run another conversion
+        //Second scanner to handle the user's response to the loop prompt
         Scanner converter = new Scanner(System.in);
 
         //String to hold the currency inputted
@@ -30,7 +30,9 @@ public class Converter {
 
             //If and else if statements to give the correct conversion based on the user input
             if(currencyType.equals("Australian")) {
+                //Runs conversion
                 double australian = amount * 1.40;
+                //Output
                 System.out.println(amount + " USD is equal to " + australian + " Australian dollar(s).");
 
             } else if(currencyType.equals("Canadian")) {
@@ -40,6 +42,10 @@ public class Converter {
             } else if(currencyType.equals("Euro")) {
                 double euro = amount * 0.89;
                 System.out.println(amount + " USD is equal to " + euro + " Euro(s).");
+
+            } else if(currencyType.equals("Franc")) {
+                double franc = amount * 0.92;
+                System.out.println(amount + "USD is equal to " + franc + "Swiss franc.");
 
             } else if(currencyType.equals("Hong Kong")) {
                 double hongkong = amount * 7.80;
@@ -91,7 +97,7 @@ public class Converter {
 
             } else if(currencyType.equals("Taiwan")) {
                 double taiwan = amount * 27.77;
-                System.out.println(amount + " USD is equal to " + taiwan + " New Taiwan dollars.");
+                System.out.println(amount + " USD is equal to " + taiwan + " [New] Taiwanese dollars.");
 
             } else if(currencyType.equals("Won")) {
                 double won = amount * 1200.32;
@@ -108,9 +114,14 @@ public class Converter {
             } else if(currencyType.equals("Zloty")) {
                 double zloty = amount * 4.02;
                 System.out.println(amount + " USD is equal to " + zloty + " Polish zloty.");
+
+            //If anything else is inputted, the error message is given
+            } else {
+                System.out.println("Sorry, that input is invalid. Please try again.");
+                
             }
 
-            //Prompts the user to run another conversion
+            //Asks the user if they want to run another conversion
             System.out.println("Run another conversion? (Please use: Yes/No)");
             userResponse = converter.nextLine();
 
@@ -124,8 +135,10 @@ public class Converter {
                 loopCheck = false;
             }
         }
+
         //Closes the scanners
         currency.close();
         converter.close();
+
     }
 }
